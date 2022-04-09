@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "LinkShortener", "LinkShortener\LinkShortener.fsproj", "{694AB3E1-61E0-4742-994A-6A24AC662A08}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "LinkShortener.Console", "LinkShortener.Console\LinkShortener.Console.fsproj", "{10D61258-30B6-4BB6-A9E7-6D5ED31B1396}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "LinkShortener.Aws", "LinkShortener.Aws\LinkShortener.Aws.fsproj", "{C2D4966E-87D6-414A-9F8D-CD5298540B15}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "LinkShortener.Lambda", "LinkShortener.Lambda\LinkShortener.Lambda.fsproj", "{3D3CB7B2-C1FC-49ED-B44E-F533848E064F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{B3AF5EB2-C909-4EF9-BF9C-0ED74340B477}"
+	ProjectSection(SolutionItems) = preProject
+		template.yaml = template.yaml
+		LinkShortener.Deploy\deploy.sh = LinkShortener.Deploy\deploy.sh
+		LinkShortener.Deploy\deployGfogh.sh = LinkShortener.Deploy\deployGfogh.sh
+		.gitignore = .gitignore
+		README.md = README.md
+		LICENSE = LICENSE
+	EndProjectSection
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "LinkShortenerDeploy", "LinkShortener.Deploy\src\LinkShortenerDeploy\LinkShortenerDeploy.fsproj", "{EBAE02BD-2BBF-414F-9198-C051E9BEB65B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{694AB3E1-61E0-4742-994A-6A24AC662A08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{694AB3E1-61E0-4742-994A-6A24AC662A08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{694AB3E1-61E0-4742-994A-6A24AC662A08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{694AB3E1-61E0-4742-994A-6A24AC662A08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10D61258-30B6-4BB6-A9E7-6D5ED31B1396}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10D61258-30B6-4BB6-A9E7-6D5ED31B1396}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10D61258-30B6-4BB6-A9E7-6D5ED31B1396}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10D61258-30B6-4BB6-A9E7-6D5ED31B1396}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2D4966E-87D6-414A-9F8D-CD5298540B15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2D4966E-87D6-414A-9F8D-CD5298540B15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2D4966E-87D6-414A-9F8D-CD5298540B15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2D4966E-87D6-414A-9F8D-CD5298540B15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D3CB7B2-C1FC-49ED-B44E-F533848E064F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D3CB7B2-C1FC-49ED-B44E-F533848E064F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D3CB7B2-C1FC-49ED-B44E-F533848E064F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D3CB7B2-C1FC-49ED-B44E-F533848E064F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBAE02BD-2BBF-414F-9198-C051E9BEB65B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBAE02BD-2BBF-414F-9198-C051E9BEB65B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBAE02BD-2BBF-414F-9198-C051E9BEB65B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBAE02BD-2BBF-414F-9198-C051E9BEB65B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
