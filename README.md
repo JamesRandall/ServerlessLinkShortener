@@ -1,18 +1,41 @@
-## Welcome to your CDK F# project!
+# Super simple serverless link shortener
 
-This is a blank project for F# development with CDK.
+This is an insanely simple link shortener that makes use of Lambda and DynamoDB to keep the cost low.
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+Mostly posting as I thought it might be a useful example of some AWS stuff for folk.
 
-It uses the [.NET Core CLI](https://docs.microsoft.com/dotnet/articles/core/) to compile and execute your project.
+_Full disclaimer:_ This really isn't designed to be used as some kind of high throughput super scale link shortener, it just did a simple job for me in a specific scenario. Codes are generated randomly and there is no attempt to dedupe links.
 
-## Useful commands
+## Deployment
 
-* `dotnet build src` compile this app
-* `cdk ls`           list all stacks in the app
-* `cdk synth`        emits the synthesized CloudFormation template
-* `cdk deploy`       deploy this stack to your default AWS account/region
-* `cdk diff`         compare deployed stack with current state
-* `cdk docs`         open CDK documentation
+You will need CDK and its prerequisites installed to deploy the system and also .NET 6. You will also need a domain name registered in Route 53.
 
-Enjoy!
+With those prerequisites in place you first need to create a new secret in AWS Secrets Manager. This is the API key that will be used to protect the POST verb that associates a shortcode with a link. The API key needs to be called:
+
+    linkshortener/apikey
+
+Set the secret as the plain text form, delete the JSON in the edit box, and simply set the API key you want to use.
+
+Now navigate to the LinkShortener.Deploy folder and run the command:
+
+    ./deploy.sh {domainName} {tableName} {hostedZoneId}
+
+For example:
+
+    ./deploy.sh mydomain.com mydynamotable Z000JDHDHDWUU$
+
+You can find your hosted zone ID in the Route 53 list of hosted zones.
+
+If all is well that will build the lambdas and deploy to AWS.
+
+If you don't want to use an API key then uncomment the two marked lines in the CDK stack.
+
+## Usage
+
+To save a new link POST the link to https://yourdomain.com and if you are using an API key set it in the x-api-key header. This will return the short link in the response.
+
+To use a short link simply paste it into your browser.
+
+## Notes
+
+You can actually get the CDK to build your .NET Lambda project however the image was failing when I tried this, not sure why, so for now this builds and packages the zip from a bash script.
