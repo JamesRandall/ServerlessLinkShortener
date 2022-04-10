@@ -36,6 +36,10 @@ To save a new link POST the link to https://yourdomain.com and if you are using 
 
 To use a short link simply paste it into your browser.
 
+## Support
+
+This comes with my I don't give two f^&%s support guarantee. I mean I might help. I might not. I have a life you know.
+
 ## Notes
 
 You can actually get the CDK to build your .NET Lambda project however the image was failing when I tried this, not sure why, so for now this builds and packages the zip from a bash script.
